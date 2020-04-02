@@ -21,6 +21,10 @@ sudo apt-get install virtualenv
 sudo apt get install mysl-server libmysqlclient-dev or
 pip install flask-mysqldb
 ```
+### Forms:
+```
+pip install Flask-WTF
+```
 
 ## Useful Links
 * [https://flask.palletsprojects.com/en/1.1.x/](https://flask.palletsprojects.com/en/1.1.x/) - Flask documentation

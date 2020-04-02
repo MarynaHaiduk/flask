@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="container">
+      {% for article in articles %}
+          {% if id == article.id %}
+              <h5>{{ article.title }}</h5>
+              <p>{{ article.body }}</p>
+              <p>{{ article.author }}</p>
+              <p>{{ article.create_date }}</p>
+          {% endif %}
+      {% endfor %}
+  </div>
+{% endblock %}

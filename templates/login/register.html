@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="container">
+    <form class="form-signin">
+        <fieldset>
+            <legend>Create your account</legend>
+            <div>
+               {{ form.username.label }}<br>
+               {{ form.username }}<br>
+
+               {{ form.email.label }}<br>
+               {{ form.email }}<br>
+
+               {{ form.password.label }}<br>
+               {{ form.password }}<br>
+
+               {{ form.confirm }}<br>
+
+               {{ form.submit }}
+            </div>
+        </fieldset>
+    </form>
+  </div>
+{% endblock %}
