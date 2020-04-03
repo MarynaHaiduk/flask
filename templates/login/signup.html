@@ -2,25 +2,19 @@
 
 {% block body %}
   <div class="container">
-    <h3>Create your account</h3>
+    <h3>Sign Up</h3>
     <form class="form-signin" action="" method="post">
         <p>
             {{ form.username.label }}<br>
             {{ form.username(size=20) }}
         </p>
         <p>
-            {{ form.email.label }}<br>
-            {{ form.email }}
-        </p>
-        <p>
             {{ form.password.label }}<br>
             {{ form.password }}
         </p>
-        <p>
-            {{ form.confirm_password.label }}<br>
-            {{ form.confirm_password }}
-        </p>
+        <p><a href="#">Forget your password?</a></p>
         <p>{{ form.submit() }}</p>
     </form>
+      <p>New user? <a href="{{ url_for('register')}}">Sign up for a free account</a></p>
   </div>
 {% endblock %}
