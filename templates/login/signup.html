@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
-{% block body %}
+{% block title %}{% endblock %}
+
+{% block content %}
   <div class="container">
-    <h3>Sign Up</h3>
+    <h3>Please sign in</h3>
     <form class="form-signin" action="" method="post">
         <p>
             {{ form.username.label }}<br>
@@ -13,6 +15,11 @@
             {{ form.password }}
         </p>
         <p><a href="#">Forget your password?</a></p>
+        <div class="checkbox mb-3">
+            <label for="remember-me">
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
         <p>{{ form.submit() }}</p>
     </form>
       <p>New user? <a href="{{ url_for('register')}}">Sign up for a free account</a></p>

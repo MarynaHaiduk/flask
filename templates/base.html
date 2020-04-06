@@ -3,17 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Flask</title>
+  <title>{% block title %}FlaskAPP{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     rel="stylesheet" />
 </head>
 <body>
 
-{% include 'navbar.html' %}
+{% block navbar %}
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('home') }}">FlaskApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+         aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('articles') }}">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about') }}">About</a>
+            </li>
+          </ul>
+          <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('signup') }}">Sign in</a>
+        </div>
+      </div>
+    </nav>
+{% endblock %}
 
-<div class="container">
-  {% block body %}{% endblock %}
-</div>
+{% block content %}{% endblock %}
 
 <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js></script>
 

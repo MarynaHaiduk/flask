@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block body %}
+{% block content %}
   <div class="container">
     {% for article in articles %}
         <div class="container">
             <h3>{{ article.title }}</h3>
             <p><small>updated {{ article.create_date }}</small></p>
-            <p>{{ article.body }}</p>
+            <p>{{ article.text }}</p>
             <p><small>Author: {{ article.author }}</small></p>
         </div>
     {% endfor %}

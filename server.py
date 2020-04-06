@@ -5,6 +5,7 @@ from forms import RegistrationForm
 import os # to generate some random sekret key
 
 app = Flask(__name__)
+Bootstrap(app)
 
 # to generate some random sekret key
 my_sekret_key = os.urandom(24)
