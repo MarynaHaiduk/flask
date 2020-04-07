@@ -56,5 +56,3 @@ pip install flask-bootstrap
 * [edureka](https://www.youtube.com/watch?v=lj4I_CvBnt0) - Python Flask tutorial for beginners
 * [https://pythonhosted.org/Flask-Bootstrap](https://pythonhosted.org/Flask-Bootstrap/) - Flask Bootstrap
 * https://github.com/pallets/flask/tree/1.1.2/examples/tutorial
-
-
