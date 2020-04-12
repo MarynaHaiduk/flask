@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
@@ -34,22 +35,23 @@
                         {{ form.password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+
                 <div class="form-check">
                     {{ form.remember(class="form-check-input") }}
                     {{ form.remember.label(class="form-check-label") }}
+                    <small class="text-muted ml-4"><a href="#">Forgot Password?</a></small>
                 </div>
 
                 <div class="form-group">
                     {{ form.submit(class="btn btn-outline-info") }}
                 </div>
-                <small class="text-muted ml-2">
-                    <a href="#">Forgot Password?</a>
-                </small>
         </form>
     </div>
+
     <div class="border-top pt-3">
         <small class="text-muted ml-2">
             Need an account? <a class="ml-2" href="{{ url_for("register") }}">Sign Up Now</a>
         </small>
     </div>
+
 {% endblock %}

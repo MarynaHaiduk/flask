@@ -33,10 +33,53 @@ pip install Flask
 ```
 Running on [http://127.0.0.1:5000](http://127.0.0.1:5000/) (Press CTRL+C to quit) 
 
-Install MySQL:
+For MySQL:
 ```
 sudo apt get install mysl-server libmysqlclient-dev or
 pip install flask-mysqldb
+```
+
+For SQLAlchemy:
+```
+pip install flask-sqlalchemy
+
+in Python Console: 
+from app import db
+db.create_all()
+from app import User, Post
+user_1 = User(username='test', email='test@test.com', password='password')
+db.session.add(user_1)
+db.session.commit()
+User.query.all()
+User.query.first()
+User.query.filter_by(username='test').all()
+User.query.filter_by(username='test').first()
+
+user = User.query.filter_by(username='test').all()
+user.id // 1
+user = User.query.get(1)
+user.posts // []
+
+post_1 = Post(title='Article One', text='Lorem ipsum dolor sit amet...', user_id=user.id)
+db.session.add(post_1)
+db.session.commit()
+
+// drop db table rows
+db.drop_all()
+db.create_all()
+User.query.all() // []
+Post.query.all() // []
+
+# Не работает!!!
+user.posts
+
+for post in user.posts:
+   print(post.title)
+
+post = Post.query.first()
+
+post.user_id
+post.author
 ```
 
 Install for Forms:
@@ -52,6 +95,28 @@ Install all the requirements:
 ```
 $ pip install -r requirements.txt
 ```
+
+Flask allows you to register environment variables that you want to be automatically 
+imported when you run the flask command. To use this option you have to install the python-dotenv package:
+```
+(venv) $ pip install python-dotenv
+```
+
+Flask-CLI:
+```
+pip install flask-cli
+```
+
+Bcrypt (for generating strong hashing values in Python)
+```
+pip install flask-bcrypt
+
+in Python Console: 
+from flask_bcrypt import Bcrypt
+bcrypt = Bcrypt()
+bcrypt.generate_password_hash('')
+```
+
 
 ### Useful Links
 * [https://flask.palletsprojects.com/en/1.1.x](https://flask.palletsprojects.com/en/1.1.x/) - Flask documentation
